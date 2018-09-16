@@ -19,19 +19,22 @@
       <table style="width:100%">
         <caption>List of EITs</caption>
         <tr>
-          {{#each columns}}
-          {{> columnname}}
-          {{/each}}
+            <td>Lastname</td>
+            <td>firstname</td> 
+            <td>Gender</td>
+            <td>Date Of birth</td>
         </tr>
         <tr>
-          <td>Jacques</td>
-          <td>Amatcha</td> 
-          <td>M</td>
-          <td>08/06/1960</td>          
+          {{#each eit}}
+          {{> columnname}}
+          {{/each}}         
         </tr>
       </table>
     </div>
   </body>
   <template name="columnname">
-    <td>{{text}}</td>
+    <td>{{Firstname}}</td>
+    <td>{{Lastname}}</td>
+    <td>{{Gender}}</td>
+    <td>{{Dateofbirth}}</td>
   </template>

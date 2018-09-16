@@ -6,7 +6,8 @@ import './body.html';
  
 Template.body.helpers({
     eit() {
-        return EIT.find({});
+    // Show newest tasks at the top
+    return EIT.find({}, { sort: { Firstname: +1 } });      
       },
 });
  

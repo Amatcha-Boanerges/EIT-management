@@ -7,6 +7,6 @@ Template.body.helpers({
     { text: 'First name' },
     { text: 'Last name' },
     { text: 'Gender' },
-    { text: 'Date of birth' },    
+    { text: 'Date of birth' },     
   ],
 });

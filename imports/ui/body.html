@@ -9,9 +9,10 @@
             Last name :<br>
             <input type="text" name="Lastname" placeholder="Last name" /><br>
             Gender:<br>
-            <input type="text" name="Gender" placeholder="Gender : M/F" /><br>
+            <input type="radio" name="Gender" value="male" checked> Male<br>
+            <input type="radio" name="Gender" value="female"> Female<br>
             Date of birth:<br>
-            <input type="text" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
+            <input type="date" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
             <input type="submit" name="submit" value="Submit" >
         </form>
       </header>
@@ -25,16 +26,16 @@
             <td>Date Of birth</td>
         </tr>
           {{#each eit}}
-          {{> columnname}}
+          {{> eitdetails}}
           {{/each}}
       </table>
     </div>
   </body>
-  <template name="columnname">
+  <!-- <template name="eitdetails">
     <tr>
         <td>{{Firstname}}</td>
         <td>{{Lastname}}</td>
         <td>{{Gender}}</td>
         <td>{{Dateofbirth}}</td>
     </tr>
-  </template>
+  </template> -->

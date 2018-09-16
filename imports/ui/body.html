@@ -1,0 +1,38 @@
+<body>
+    <div class="container">
+      <header>
+        <h1>EIT Management</h1>
+        // form fields to put information
+        <form class="new-eit">
+            <input type="text" name="text" placeholder="Type to add your first name" />
+            <input type="text" name="text" placeholder="Type to add your last name" />
+            <input type="text" name="text" placeholder="Type to add your gender" />
+            <input type="text" name="text" placeholder="Type to add your date of birth" />
+        </form>
+      </header>
+      // table to print information
+      <table style="width:100%">
+        <tr>
+          {{#each columns}}
+          {{> columnname}}
+          {{/each}}
+        </tr>
+        <tr>
+          <td>Jacques</td>
+          <td>Amatcha</td> 
+          <td>M</td>
+          <td>08/06/1960</td>          
+        </tr>
+        <tr>
+          <td>Jacques</td>
+          <td>Amatcha</td> 
+          <td>M</td>
+          <td>08/06/1960</td>          
+        </tr>
+      </table>
+    </div>
+  </body>
+
+  <template name="columnname">
+    <th>{{text}}</th>
+  </template>

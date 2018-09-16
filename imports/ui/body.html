@@ -5,36 +5,36 @@
          <!-- form fields to put information -->
         <form class="new-eit">
             First name :<br>
-            <input type="text" name="firstname" placeholder="First name" /><br>
+            <input type="text" name="Firstname" placeholder="First name" /><br>
             Last name :<br>
-            <input type="text" name="lastname" placeholder="Last name" /><br>
+            <input type="text" name="Lastname" placeholder="Last name" /><br>
             Gender:<br>
             <input type="text" name="Gender" placeholder="Gender : M/F" /><br>
             Date of birth:<br>
             <input type="text" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit" >
         </form>
       </header>
       <!-- table to print information -->
       <table style="width:100%">
         <caption>List of EITs</caption>
         <tr>
-            <td>Lastname</td>
-            <td>firstname</td> 
+            <td>Firstname</td>
+            <td>Lastname</td> 
             <td>Gender</td>
             <td>Date Of birth</td>
         </tr>
-        <tr>
           {{#each eit}}
           {{> columnname}}
-          {{/each}}         
-        </tr>
+          {{/each}}
       </table>
     </div>
   </body>
   <template name="columnname">
-    <td>{{Firstname}}</td>
-    <td>{{Lastname}}</td>
-    <td>{{Gender}}</td>
-    <td>{{Dateofbirth}}</td>
+    <tr>
+        <td>{{Firstname}}</td>
+        <td>{{Lastname}}</td>
+        <td>{{Gender}}</td>
+        <td>{{Dateofbirth}}</td>
+    </tr>
   </template>

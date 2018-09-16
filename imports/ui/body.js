@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
  
 import { EIT } from '../api/eit.js';
 
+import './eit.js';
 import './body.html';
  
 Template.body.helpers({

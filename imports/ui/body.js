@@ -4,9 +4,9 @@ import './body.html';
  
 Template.body.helpers({
   columns: [
-    { columnname: 'First name' },
-    { columnname: 'Last name' },
-    { columnname: 'Gender' },
-    { columnname: 'Date of birth' },    
+    { text: 'First name' },
+    { text: 'Last name' },
+    { text: 'Gender' },
+    { text: 'Date of birth' },    
   ],
 });

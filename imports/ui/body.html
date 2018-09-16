@@ -2,7 +2,7 @@
     <div class="container">
       <header>
         <h1>EIT Management</h1>
-        // form fields to put information
+         <!-- form fields to put information -->
         <form class="new-eit">
             <input type="text" name="text" placeholder="Type to add your first name" />
             <input type="text" name="text" placeholder="Type to add your last name" />
@@ -10,7 +10,7 @@
             <input type="text" name="text" placeholder="Type to add your date of birth" />
         </form>
       </header>
-      // table to print information
+      <!-- table to print information -->
       <table style="width:100%">
         <tr>
           {{#each columns}}
@@ -34,5 +34,5 @@
   </body>
 
   <template name="columnname">
-    <th>{{text}}</th>
+    <td>{{text}}</td>
   </template>

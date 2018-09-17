@@ -2,6 +2,11 @@
     <div class="container">
       <header>
         <h1>EIT Management</h1>
+        <label class="hide-completed">
+            <input type="checkbox" />
+            Hide Completed Tasks
+        </label>
+
          <!-- form fields to put information -->
         <form class="new-eit">
             First name :<br>
@@ -13,18 +18,20 @@
             <input type="radio" name="Gender" value="female"> Female<br>
             Date of birth:<br>
             <input type="date" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
+            <input type="hidden" name="eitid" placeholder="eitid" /><br>
             <input type="submit" name="submit" value="Submit" >
         </form>
       </header>
       <!-- table to print information -->
       <table style="width:100%">
-        <caption><h1>List of EITs</h1></caption>
+        <caption><h1>List of EITs ({{selectedeit}} Selected EIT(s))</h1></caption>
         <tr>
             <td>Firstname</td>
             <td>Lastname</td> 
             <td>Gender</td>
             <td>Date Of birth</td>
         </tr>
+        <!-- calling of the template -->
           {{#each eit}}
           {{> eitdetails}}
           {{/each}}

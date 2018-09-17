@@ -16,6 +16,11 @@ Template.eitdetails.events({
   },
   'click .edit'() {
     var form = document.querySelector(".new-eit");
+    form.eitid.value = this._id;
     form.Firstname.value = this.Firstname;
+    form.Lastname.value = this.Lastname;
+    form.Gender.value = this.Gender;
+    form.Dateofbirth.value = this.Dateofbirth;
+
   },
 });

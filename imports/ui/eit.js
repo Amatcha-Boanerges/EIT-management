@@ -14,4 +14,8 @@ Template.eitdetails.events({
   'click .delete'() {
     EIT.remove(this._id);
   },
+  'click .edit'() {
+    var form = document.querySelector(".new-eit");
+    form.Firstname.value = this.Firstname;
+  },
 });

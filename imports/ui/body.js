@@ -10,6 +10,9 @@ Template.body.helpers({
     // Show newest tasks at the top
     return EIT.find({}, { sort: { Firstname: +1 } });      
       },
+    selectedeit() {
+    return EIT.find({ checked: { $ne: false } }).count();
+      },
 });
  
 Template.body.events({

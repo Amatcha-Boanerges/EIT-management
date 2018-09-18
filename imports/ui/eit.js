@@ -3,13 +3,18 @@ import { Template } from 'meteor/templating';
 import { EIT } from '../api/eit.js';
  
 import './eit.html';
- 
+
+var deleteArray = [];
+
 Template.eitdetails.events({
-  'click .toggle-checked'() {
-    // Set the checked property to the opposite of its current value
-    EIT.update(this._id, {
-      $set: { checked: ! this.checked },
-    });
+  'click .toggle-checked'(event) {
+    var checkbox = event.target;
+    if (checkbox.checked){
+      deleteArray.push(this._id);
+    } else {
+      var index = deleteArray.indexOf(this._id);
+      deleteArray.splice(index, 1);
+    }
   },
   'click .delete'() {
     EIT.remove(this._id);
@@ -24,3 +29,16 @@ Template.eitdetails.events({
     form.submit.value = "UPDATE";
   },
 });
+Template.body.events({
+  'click #deleteBtn'(){
+    var i;
+    for (i = 0; i < deleteArray.length; i++) {
+      EIT.remove(deleteArray[i]);
+    }
+  }
+});
+// var deleteButton = document.querySelector('#deleteBtn');
+//   console.log(deleteButton);
+// deleteButton.addEventListener("click",function(){
+//   console.log(deleteArray);
+// });

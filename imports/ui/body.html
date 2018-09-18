@@ -4,21 +4,22 @@
         <h1>EIT Management</h1>
         
         {{> loginButtons}}
- 
-         <!-- form fields to put information -->
-        <form class="new-eit">
-            First name :<br>
-            <input type="text" name="Firstname" placeholder="First name" /><br>
-            Last name :<br>
-            <input type="text" name="Lastname" placeholder="Last name" /><br>
-            Gender:<br>
-            <input type="radio" name="Gender" value="male" checked> Male<br>
-            <input type="radio" name="Gender" value="female"> Female<br>
-            Date of birth:<br>
-            <input type="date" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
-            <input type="hidden" name="eitid" placeholder="eitid" /><br>
-            <input type="submit" name="submit" value="ADD A NEW EIT" >
-        </form>
+        {{#if currentUser}}
+          <!-- form fields to put information -->
+          <form class="new-eit">
+              First name :<br>
+              <input type="text" name="Firstname" placeholder="First name" /><br>
+              Last name :<br>
+              <input type="text" name="Lastname" placeholder="Last name" /><br>
+              Gender:<br>
+              <input type="radio" name="Gender" value="male" checked> Male<br>
+              <input type="radio" name="Gender" value="female"> Female<br>
+              Date of birth:<br>
+              <input type="date" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
+              <input type="hidden" name="eitid" placeholder="eitid" /><br>
+              <input type="submit" name="submit" value="ADD A NEW EIT" >
+          </form>
+        {{/if}}
       </header>
       <!-- table to print information -->
       <table style="width:100%">

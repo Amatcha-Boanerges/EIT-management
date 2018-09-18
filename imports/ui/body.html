@@ -2,9 +2,12 @@
     <div class="container">
       <header>
         <h1>EIT Management</h1>
-        
+
         {{> loginButtons}}
         {{#if currentUser}}
+          <br>
+          <span class="text"><strong> Welcome {{currentUser.username}}</strong></span>
+          <br>
           <!-- form fields to put information -->
           <form class="new-eit">
               First name :<br>

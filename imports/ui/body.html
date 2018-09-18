@@ -2,7 +2,6 @@
     <div class="container">
       <header>
         <h1>EIT Management</h1>
-
         {{> loginButtons}}
         {{#if currentUser}}
           <br>
@@ -11,23 +10,23 @@
           <!-- form fields to put information -->
           <form class="new-eit">
               First name :<br>
-              <input type="text" name="Firstname" placeholder="First name" /><br>
+              <input class="formfields" type="text" name="Firstname" placeholder="First name" /><br>
               Last name :<br>
-              <input type="text" name="Lastname" placeholder="Last name" /><br>
+              <input class="formfields" type="text" name="Lastname" placeholder="Last name" /><br>
               Gender:<br>
-              <select name="Gender">
+              <select class="formfields" name="Gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select><br>
               Date of birth:<br>
-              <input type="date" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
-              <input type="hidden" name="eitid" placeholder="eitid" /><br>
-              <input type="submit" name="submit" value="ADD A NEW EIT" >
+              <input class="formfields" type="date" name="Dateofbirth" placeholder="Date of birth (DD/MM/YYYY)" /><br>
+              <input class="formfields" type="hidden" name="eitid" placeholder="eitid" /><br>
+              <input class="submitformfields" type="submit" name="submit" value="ADD A NEW EIT" >
           </form>
         {{/if}}
       </header>
       <!-- table to print information -->
-      <table style="width:100%">
+      <table>
         <caption><h1>List of EITs</h1></caption>
         <tr>
             <th></th>
@@ -42,7 +41,7 @@
           {{/each}}
       </table>
       <br>
-      <span><button id="deleteBtn"> Delete &times;</button></span>
+      <div id="deleteBtndiv"><span><button id="deleteBtn"> Delete Selected EIT &times;</button></span></div>
     </div>
   </body>
   <!-- <template name="eitdetails">

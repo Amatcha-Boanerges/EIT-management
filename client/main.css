@@ -24,9 +24,16 @@ body {
   background: white;
 }
 
+.formfields {
+  border-radius: 5px;
+  width:250px; 
+  height:30px;
+}
 table, th, td {
-  border: 1px solid black;
   border-collapse: collapse;
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
 
 th, td {
@@ -36,16 +43,35 @@ th, td {
 th {
   text-align: left;
 }
-
+tr:nth-child(even) {
+  background-color: #d2edf4;
+  border-radius: 6px 6px 6px 6px;
+}
 table {
-  border-spacing: 5px;
+  border-spacing: 10px;
+  width: 90%;
+  margin: 0px auto;
+  *border-collapse: collapse; /* IE7 and lower */
+  border-spacing: 0; 
+}
+th:first-child {
+  border-radius: 6px 0 0 0;
+}
+
+th:last-child {
+  border-radius: 0 6px 0 0;
+}
+
+th:only-child{
+  border-radius: 6px 6px 0 0;
 }
  
 header {
   background: #d2edf4;
-  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
   padding: 20px 15px 15px 15px;
   position: relative;
+  background-size : 100% auto;
+  
 }
  
 #login-buttons {
@@ -65,7 +91,7 @@ form {
   margin-bottom: -10px;
   position: relative;
 }
- 
+
 .new-task input {
   box-sizing: border-box;
   padding: 10px 0;
@@ -140,4 +166,12 @@ header .hide-completed {
   .new-eit input {
     padding-bottom: 5px;
   }
+
+#deleteBtn {
+  padding: 20px 15px 15px 15px;
+  margin: 0px auto;
+}
+deleteBtndiv {
+  
+}
 }

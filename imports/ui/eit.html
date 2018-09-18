@@ -3,7 +3,8 @@
     you are trying to reproduce -->
 <template name="eitdetails">
                 <tr class="{{#if checked}}checked{{/if}}">
-                                <td class="edit"><span><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></span>{{Firstname}}</td>
+                                <td class="check"><input type="checkbox" checked="{{checked}}" class="toggle-checked" /></td>
+                                <td class="edit">{{Firstname}}</td>
                                 <td class="edit">{{Lastname}}</td>
                                 <td class="edit">{{Gender}}</td>
                                 <td class="edit">{{Dateofbirth}} <span><button class="delete"> Delete &times;</button></span></td>

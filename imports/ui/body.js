@@ -26,7 +26,7 @@ Template.body.events({
       const eitid = target.eitid.value;
 
       // Insert and Update an eit into the collection
-      Meteor.call('eit.insert', Firstname, Lastname, Gender, Dateofbirth);      
+      Meteor.call('eit.insert', Firstname, Lastname, Gender, Dateofbirth, eitid);      
 
       // Clear form
       target.Firstname.value = '';

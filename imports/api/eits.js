@@ -8,10 +8,8 @@ export const EIT = new Mongo.Collection('eit');
 //     EIT.remove({ checked: { $ne: true } });
 //   },
 
-var deleteArray = [];
- 
 Meteor.methods({
-    'eit.insert'(Firstname, Lastname, Gender, Dateofbirth) {
+    'eit.insert'(Firstname, Lastname, Gender, Dateofbirth, eitId) {
       check(Firstname, String);
       check(Lastname, String);
       check(Gender, String);
@@ -77,13 +75,5 @@ Meteor.methods({
         var index = deleteArray.indexOf(eitId);
         deleteArray.splice(index, 1);
       }
-    },
-    'eit.removemany'(eitId, deleteArray) {
-        check(eitId, String);
-        check(deleteArray, String);
-        var i;
-        for (i = 0; i < deleteArray.length; i++) {
-        EIT.remove(deleteArray[i]);
-      },
     },
   });

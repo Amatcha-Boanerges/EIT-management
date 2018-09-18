@@ -10,9 +10,6 @@ Template.body.helpers({
     // Show newest tasks at the top
     return EIT.find({}, { sort: { Firstname: +1 } });      
       },
-    selectedeit() {
-    return EIT.find({ checked: { $ne: false } }).count();
-      },
 });
  
 Template.body.events({
@@ -56,8 +53,5 @@ Template.body.events({
       target.Dateofbirth.value = '';
       target.eitid.value = '';
       target.submit.value = 'ADD A NEW EIT';
-    },
-    'click .deleteselected'() { 
-      EIT.remove({ checked: { $ne: true } });
     },
   });

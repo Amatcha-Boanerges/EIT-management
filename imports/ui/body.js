@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
- 
+import { Meteor } from 'meteor/meteor'; 
 import { EIT } from '../api/eit.js';
 
 import './eit.js';
@@ -32,6 +32,8 @@ Template.body.events({
           Gender,
           Dateofbirth,
           createdAt: new Date(), // current time
+          owner: Meteor.userId(),
+          username: Meteor.user().username,
         });
       } else {
       // Insert a new eit into the collection
@@ -40,7 +42,9 @@ Template.body.events({
           Firstname: Firstname, 
           Lastname: Lastname, 
           Gender: Gender,
-          Dateofbirth: Dateofbirth
+          Dateofbirth: Dateofbirth,
+          owner: Meteor.userId(),
+          username: Meteor.user().username,
          },
       });
       }

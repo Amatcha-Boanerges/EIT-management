@@ -35,7 +35,7 @@ Template.body.events({
     var i;
     for (i = 0; i < deleteArray.length; i++) {
       // EIT.remove(deleteArray[i]);
-      Meteor.call('eit.remove', deleteArray[i]);
+      Meteor.call('eit.removeone', deleteArray[i]);
     }
   }
 });

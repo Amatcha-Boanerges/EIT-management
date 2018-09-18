@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor'; 
-import { EIT } from '../api/eit.js';
+import { EIT } from '../api/eits.js';
 
 import './eit.js';
 import './body.html';

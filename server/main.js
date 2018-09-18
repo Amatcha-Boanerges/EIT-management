@@ -1,1 +1,1 @@
-import '../imports/api/eit.js';
+import '../imports/api/eits.js';

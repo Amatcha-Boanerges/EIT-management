@@ -24,32 +24,10 @@ Template.body.events({
       const Gender = target.Gender.value;
       const Dateofbirth = target.Dateofbirth.value;
       const eitid = target.eitid.value;
-      
-      if (target.eitid.value === '') {
-      EIT.insert({
-          Firstname,
-          Lastname,
-          Gender,
-          Dateofbirth,
-          createdAt: new Date(), // current time
-          owner: Meteor.userId(),
-          username: Meteor.user().username,
-        });
-      } else {
-      // Insert a new eit into the collection
-      EIT.update(target.eitid.value, {
-        $set: { 
-          Firstname: Firstname, 
-          Lastname: Lastname, 
-          Gender: Gender,
-          Dateofbirth: Dateofbirth,
-          owner: Meteor.userId(),
-          username: Meteor.user().username,
-         },
-      });
-      }
-      // Create a new method to update a form according to the ID
-   
+
+      // Insert and Update an eit into the collection
+      Meteor.call('eit.insert', Firstname, Lastname, Gender, Dateofbirth);      
+
       // Clear form
       target.Firstname.value = '';
       target.Lastname.value = '';

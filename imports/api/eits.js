@@ -49,31 +49,4 @@ Meteor.methods({
    
       EIT.remove(eitId);
     },
-    'eit.populate'(eitId) {
-        check(eitId, String);
-        check(Firstname, String);
-        check(Lastname, String);
-        check(Gender, String);
-
-        var form = document.querySelector(".new-eit");
-        form.eitid.value = eitId;
-        form.Firstname.value = Firstname;
-        form.Lastname.value = Lastname;
-        form.Gender.value = Gender;
-        form.Dateofbirth.value = Dateofbirth;
-        form.submit.value = "UPDATE";
-      },
-    'eit.setChecked'(eitId, setChecked, deleteArray) {
-      check(eitId, String);
-      check(setChecked, Boolean);
-      check(deleteArray, Array);
-   
-      var checkbox = event.target;
-      if (setChecked){
-        deleteArray.push(eitId);
-      } else {
-        var index = deleteArray.indexOf(eitId);
-        deleteArray.splice(index, 1);
-      }
-    },
   });

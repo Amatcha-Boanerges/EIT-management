@@ -21,6 +21,6 @@ Template.eitdetails.events({
     form.Lastname.value = this.Lastname;
     form.Gender.value = this.Gender;
     form.Dateofbirth.value = this.Dateofbirth;
-
+    form.submit.value = "UPDATE";
   },
 });

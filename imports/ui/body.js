@@ -29,7 +29,7 @@ Template.body.events({
       const eitid = target.eitid.value;
       
       if (target.eitid.value === '') {
-        EIT.insert({
+      EIT.insert({
           Firstname,
           Lastname,
           Gender,
@@ -55,5 +55,9 @@ Template.body.events({
       target.Gender.value = '';
       target.Dateofbirth.value = '';
       target.eitid.value = '';
+      target.submit.value = 'ADD A NEW EIT';
+    },
+    'click .deleteselected'() { 
+      EIT.remove({ checked: { $ne: true } });
     },
   });

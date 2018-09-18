@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
  
 import { EIT } from '../api/eits.js';
@@ -17,7 +18,7 @@ Template.eitdetails.events({
     }
   },
   'click .delete'() {
-    EIT.remove(this._id);
+    Meteor.call('eit.removeone', this._id);
   },
   'click .edit'() {
     var form = document.querySelector(".new-eit");
@@ -33,7 +34,8 @@ Template.body.events({
   'click #deleteBtn'(){
     var i;
     for (i = 0; i < deleteArray.length; i++) {
-      EIT.remove(deleteArray[i]);
+      // EIT.remove(deleteArray[i]);
+      Meteor.call('eit.remove', deleteArray[i]);
     }
   }
 });

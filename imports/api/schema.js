@@ -19,12 +19,6 @@ const typeDefs = gql`
     Gender: String
     Dateofbirth:  Date
     createdAt: Date
-    owner: Owner
-  }
-  type Owner {
-    id: Int
-    userName: String
-    lastName: String
   }
   type Task {
     _id: String

@@ -4,27 +4,21 @@ import { gql } from 'apollo-server-express'
 const typeDefs = gql`
   scalar Date
   type Query {
-    getOneEIT(firstName: String, lastName: String, id: String): [EIT]
+    getOneEIT(Firstname: String, Lastname: String, id: String): [EIT]
     getEITs: [EIT]
   }
   type Mutation {
-    addEIT(Firstname: String!, Lastname: String!, Gender: String!, Dateofbirth: Date!): EIT
+    addEIT(Firstname: String!, Lastname: String!, Gender: String!, Dateofbirth: String!): EIT
     deleteEIT(id: String!): String
-    updateEIT(Firstname: String!, Lastname: String!, Gender: String!, Dateofbirth: Date!, id: String!): EIT
+    updateEIT(Firstname: String!, Lastname: String!, Gender: String!, Dateofbirth: String!, id: String!): EIT
   }
   type EIT {
-    id: Int
-    firstName: String
-    lastName: String
-    Gender: String
-    Dateofbirth:  Date
-    createdAt: Date
-  }
-  type Task {
     _id: String
-    text: String
+    Firstname: String
+    Lastname: String
+    Gender: String
+    Dateofbirth:  String
     createdAt: Date
-    checked: Boolean
   }
 `
 

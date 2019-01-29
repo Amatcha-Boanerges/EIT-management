@@ -8,14 +8,14 @@ const resolvers = {
       getOneEIT(_, args) {
         return EIT.find({ where: args })
       },
-      getAllAuthors() {
-        return EIT.findAll()
+      getEITs() {
+        return EIT.find({}).fetch()
       },
     },
     Mutation: {
       addEIT(_, args) {
-        let id = EIT.insert({ Firstname: args.Firstname, Lastname: args.Lastname, Gender: args.Gender, Dateofbirth: Date(), createdAt: new Date() })
-        return Tasks.findOne(id)
+        let id = EIT.insert({ Firstname: args.Firstname, Lastname: args.Lastname, Gender: args.Gender, Dateofbirth: args.Date, createdAt: new Date() })
+        return EIT.findOne(id)
       },
       deleteEIT(_, args) {
         EIT.remove(args.id)

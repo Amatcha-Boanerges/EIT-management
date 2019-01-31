@@ -6,7 +6,7 @@ const resolvers = {
     Date: GraphQLDateTime,
     Query: {
       getOneEIT(_, args) {
-        return EIT.find({ where: args })
+        return EIT.findOne(args.id)
       },
       getEITs() {
         return EIT.find({}).fetch()

@@ -1,6 +1,6 @@
-// import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-// import { check } from 'meteor/check';
+import { check } from 'meteor/check';
  
 export const EIT = new Mongo.Collection('eit');
 
@@ -8,17 +8,17 @@ export const EIT = new Mongo.Collection('eit');
 // //     EIT.remove({ checked: { $ne: true } });
 // //   },
 
-// Meteor.methods({
+ Meteor.methods({
 //     'eit.insert'(Firstname, Lastname, Gender, Dateofbirth, eitId) {
 //       check(Firstname, String);
 //       check(Lastname, String);
 //       check(Gender, String);
 //       check(eitId, String);
       
-//       // Make sure the user is logged in before inserting a task
-//       if (! Meteor.userId()) {
-//         throw new Meteor.Error('not-authorized');
-//       }
+      // Make sure the user is logged in before inserting a task
+    //   if (! Meteor.userId()) {
+    //     throw new Meteor.Error('not-authorized');
+    //   }
    
 //       if (eitId === '') {
 //         EIT.insert({
@@ -44,9 +44,8 @@ export const EIT = new Mongo.Collection('eit');
 //         });
 //         }
 //     },
-//     'eit.removeone'(eitId) {
-//       check(eitId, String);
-   
-//       EIT.remove(eitId);
-//     },
-//   });
+    'eit.removeone'(eitId) {
+      check(eitId, String);
+      EIT.remove(eitId);
+    },
+  });

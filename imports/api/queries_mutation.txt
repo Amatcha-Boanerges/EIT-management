@@ -1,0 +1,41 @@
+mutation addEIT {
+  addEIT(
+    Firstname: "Micael",
+    Lastname: "test",
+    Gender: "Male",
+    Dateofbirth: "2009-01-09",
+  ){
+    _id
+    Firstname
+    Lastname
+  }
+}
+mutation updateEIT {
+  updateEIT(
+    id: ""
+    Firstname: "Michael",
+    Lastname: "test",
+    Gender: "Male",
+    Dateofbirth: "2009-01-09",
+  ){
+    _id
+    Firstname
+    Lastname
+  }
+}
+
+mutation removeEIT {
+  deleteEIT(
+    id: "2GHNN4DCGaRmQKCrk"
+  )
+}
+
+query getEITs {
+  getEITs {
+    _id
+    Firstname
+    Lastname
+    createdAt
+    Dateofbirth
+  }
+}

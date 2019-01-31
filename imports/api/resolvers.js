@@ -6,7 +6,7 @@ const resolvers = {
     Date: GraphQLDateTime,
     Query: {
       getOneEIT(_, args) {
-        return EIT.findOne(args.id)
+        return EIT.findOne(args)
       },
       getEITs() {
         return EIT.find({}).fetch()
@@ -18,7 +18,8 @@ const resolvers = {
         return EIT.findOne(id)
       },
       deleteEIT(_, args) {
-        EIT.remove(args.id)
+        Meteor.call('eit.removeone', args.id)
+        // EIT.remove(args.id)
         return args.id
       },
       updateEIT(_, args) {

@@ -4,7 +4,7 @@ import { gql } from 'apollo-server-express'
 const typeDefs = gql`
   scalar Date
   type Query {
-    getOneEIT(Firstname: String, Lastname: String, id: String): [EIT]
+    getOneEIT(Firstname: String, Lastname: String, id: String): EIT
     getEITs: [EIT]
   }
   type Mutation {
